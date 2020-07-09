@@ -1,0 +1,147 @@
+
+header{
+	position: relative;
+	display: block;
+	height: 100px;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: black;
+	border: 1px solid rgba(228, 228, 228, 0.2196078431372549);
+	transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+header	.logo{
+		height: 90px;
+    overflow: hidden;
+}
+header img{
+			width: 165px;
+		    display: block;
+		    margin: -30px 0px;
+		}
+
+header	.navigations{
+		float: right;
+		padding-top: 35px;
+}
+header	.navigations ul li{
+				float: left;
+}
+header.fixed-header,header.sticky{
+	position: fixed;
+	z-index: 99;
+}
+header	.navigations ul li a{
+	color: white;
+	padding: 10px 15px;
+}
+.wrapper{
+	display: block;
+	height: 100%;
+	width: 100;
+}
+.container{
+	width: 100%;height: 100%;
+	margin:auto; 
+}
+.cities h2{
+		text-align: center;
+		margin: 40px 0px;
+		color: white;
+}
+.cities li{
+		float:left;
+		width: 50%;
+		height: auto;
+		text-align: center;
+		display: table;
+		padding: 20px;
+}
+.cities h4{
+	font-size: 55px;
+
+}
+.cities a{
+	width: 90%;
+    background: white;
+    height: 300px;
+    border: 5px solid rgb(236, 236, 236);
+    color: black;
+    display: table-cell;
+    vertical-align: middle;
+    overflow: hidden;
+    &:hover{
+	   &:before{
+		  	content: "";
+		  	position: absolute;
+		  	width: 300%;
+		  	height: 100%;
+		  	background-color: #af8f42;
+		  	left: 0;
+		  	top:0;
+		  	transform:rotate(45deg);
+		  	animation: mymove 1.3s forwards;
+	    }
+	    h4{
+	    	
+	    }
+   }
+}
+@keyframes mymove {
+  from {left: -1000px;}
+  to {left: 500px;}
+}	
+.stickySearch{
+	background: white;
+}
+
+.stickySearch.fixed-header,.stickySearch.sticky{
+	    position: fixed;
+    top: 0;
+    height: 75px;
+    z-index: 9999;
+    width: 100%;
+}
+.stickySearch .container > div{
+			float: left;
+			padding: 20px 0;
+			padding-bottom: 0;
+}
+.stickySearch .container > div:last-child{
+				float: right;
+		
+	}
+.stickySearch select{
+	    width: 220px;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+    font-size: 16px;
+    padding-left: 16px;
+    margin: 0 10px;
+}
+.stickySearch input{
+	width: 20px;
+    height: 20px;
+    color: white;
+    vertical-align: middle;
+    margin: 0px 10px;
+}
+.contents *{
+	color: white;
+}
+.contents .row{
+	padding: 75px 0px;
+}
+.contents .row.places-row{
+	padding: 0;
+}
+.contents .row .col-xs-12{
+	padding-bottom: 20px;
+}
+.contents .row .col-xs-12 h4{
+	font-size: 30px;
+}

@@ -1,0 +1,86 @@
+<section (scroll)="onWindowScroll($event);">
+<header class="header" id="header">
+  <div class="wrapper">
+    <div class="container clear">
+      <div class="logo">
+        <img src="assets/images/logo.png" />
+      </div>
+      <div class="navigations">
+        <ul>
+          <li>About</li>
+          <li>Our Beers</li>
+          <li>Find Simba</li>
+          <li>Wild Guides</li>
+          <li>Merch</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="cities">
+  <div class="wrapper">
+    <div class="container">
+      <h2>Now Pouring in</h2>
+      <ul class="clear">
+    
+        <li *ngFor="let city of cityData"><a href="" (click)="changeCity($event, city)"><h4>{{city.city_name}}</h4><p></p></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="stickySearch" id="stickySearch">
+  <div class="wrapper">
+    <div class="container clear">
+      <div style="position: relative;">
+        <mat-form-field>
+          <mat-select [value]="selectCity" (selectionChange)="changeCityData($event.value)">
+            <mat-option *ngFor="let city of cityData" [value]="city.city_name">
+              {{city.city_name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div style="position: relative;">
+        <mat-form-field>
+          <mat-select [value]="selectedArea" (selectionChange)="changeAreaData($event, $event.value)">
+            <mat-option value="All">All</mat-option>
+            <mat-option *ngFor="let area of areaData" [value]="area">
+              {{area}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <section class="example-section">
+          <mat-checkbox class="example-margin" [checked]="isbarenabled" (change)="changeValue($event.checked, 'Bar')">Bar</mat-checkbox>
+          <mat-checkbox class="example-margin" [checked]="isstoreenabled" (change)="changeValue($event.checked, 'Stores')">Stores</mat-checkbox>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contents">
+        <div class="wrapper">
+            <div class="container clear">
+                <div class="row" *ngFor="let location of locations">
+                    <div class="col-xs-12 mr-bt-30">
+                        <h4 class="txt-white district-name">{{location.name}}{{location.category}}</h4>
+                        <p class="txt-white">
+                            <a href="#" class="map-link district-link map-link__" >View on map</a>
+                        </p>
+                    </div>
+                   <div class="row places-row">
+                        <div class="col-xs-6 col-sm-6 col-md-4 mr-bt-30 place-col is-enabled is-store">
+                            <div class="place-card">
+                                <!-- <p class="large txt-white place-name">BUBBLY WINE &amp; DRY FRUITS</p> -->
+                                <!-- <p class="p-small txt-white place-addr">Pernem – Agarwada - Morgim, Agarwada, Goa 403512</p> 
+                                <a class="p txt-red map-link place-map-link" target="_blank" href="https://www.google.co.in/maps/place/Bubbly+Wine+%26+Spirit+%26+Dry+Fruit+Wholesale+Store/@15.6497561,73.7624397,17z/data=!3m1!4b1!4m5!3m4!1s0x3bbfec1190341db9:0x8e9060161ca5f22a!8m2!3d15.6497509!4d73.7646284">View on Google Maps</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</section>
